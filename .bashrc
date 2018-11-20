@@ -1,8 +1,6 @@
 
 # Setting PATH for Python 2.7
 # The original version is saved in .bash_profile.pysave
-PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
-
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 export PATH
