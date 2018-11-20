@@ -1,14 +1,41 @@
 
 # Setting PATH for Python 2.7
 # The original version is saved in .bash_profile.pysave
+PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 export PATH
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+extract () {
+   if [ -f $1 ] ; then
+       case $1 in
+           *.tar.bz2)   tar xvjf $1    ;;
+           *.tar.gz)    tar xvzf $1    ;;
+           *.bz2)       bunzip2 $1     ;;
+           *.rar)       unrar x $1       ;;
+           *.gz)        gunzip $1      ;;
+           *.tar)       tar xvf $1     ;;
+           *.tbz2)      tar xvjf $1    ;;
+           *.tgz)       tar xvzf $1    ;;
+           *.zip)       unzip $1       ;;
+           *.Z)         uncompress $1  ;;
+           *.7z)        7z x $1        ;;
+           *)           echo "don't know how to extract '$1'..." ;;
+       esac
+   else
+       echo "'$1' is not a valid file!"
+   fi
+ }
+
+
 alias la="ls -a"
 alias caen="ssh caen"
-alias 398="cd Documents/EECS398"
-alias 485="cd Documents/EECS485"
-alias 484="cd Documents/EECS484"
+alias 398="cd; cd Documents/EECS398"
+alias 485="cd; cd Documents/EECS485"
+alias 484="cd; cd Documents/EECS484"
 alias h="history"
+alias c="clear"
 
 
